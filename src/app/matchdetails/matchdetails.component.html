@@ -1,0 +1,55 @@
+<br>
+<div class="container" id="cont1">
+  <div class="row">
+    <div class="col-md-12 col-xs-12" style="text-align:center" *ngIf="resultDetails" >
+      <h3><b>{{resultDetails.matchday}}a GIORNATA</b></h3></div>
+  </div>
+  <div class="row">
+
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-xs-12" style="text-align:center" *ngIf="resultDetails" ><h5><i>STADIO:
+      {{resultDetails.venue}}</i></h5></div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-xs-12" style="text-align:center" *ngIf="resultDetails" ><h5><i>STATO:
+      {{resultDetails.status.toLowerCase()}}</i></h5></div>
+  </div>
+</div>
+<br>
+<div class="container" id="cont2">
+  <div class="row">
+    <div class="col-md-6 col-xs-12" style="text-align:center" *ngIf="resultDetails" id="colonna" [routerLink]="['/teamdetails/',idmatch,resultDetails.homeTeam.id]">
+      <div class="row" style="text-align:center">
+        <div class="col-md-12 col-xs-12" style="text-align:center" *ngIf="resultDetails" >
+          <h4>{{resultDetails.homeTeam.name}}</h4>
+        </div>
+      </div>
+      <div class="row" style="text-align:center">
+        <div class="col-md-12 col-xs-12" style="text-align:center" *ngIf="resultDetails">
+          <h2>{{resultDetails.score.fullTime.homeTeam}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-xs-12" style="text-align:center" *ngIf="resultDetails" id="colonna" [routerLink]="['/teamdetails/',idmatch,resultDetails.awayTeam.id]">
+      <div class="row" style="text-align:center">
+        <div class="col-md-12 col-xs-12" style="text-align:center" *ngIf="resultDetails" >
+          <h4>{{resultDetails.awayTeam.name}}</h4>
+        </div>
+      </div>
+      <div class="row" style="text-align:center">
+        <div class="col-md-12 col-xs-12" style="text-align:center" *ngIf="resultDetails" >
+         <h2>{{resultDetails.score.fullTime.awayTeam}}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
+<div class="container" id="cont3">
+  <div class="row">
+    <div class="col-md-12" id="colonnanew">
+      <button class="btn btn-secondary" routerLink="/footballmatches">Torna alla home Page</button>
+    </div>
+  </div>
+</div>

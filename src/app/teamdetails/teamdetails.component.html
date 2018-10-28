@@ -1,0 +1,44 @@
+<br>
+ 
+<div class="container">
+    <div class="row">
+<div class="col-md-12 col-xs-12" style="text-align:center" *ngIf="resultTeam">
+   <h1>{{resultTeam.name.toUpperCase()}}</h1><br>
+</div></div>
+<div class="row">
+    <div class="col-md-12" id="colonna">
+      <button class="btn btn-primary" [routerLink]="['/matchdetails/',idmatch]"> Torna Indietro </button>
+    </div>
+  </div>
+  <br>
+  
+
+<div class="row" id="titolo"> 
+    <div class="col-md-4 col-xs-12" style="text-align:center"><h2> Nome </h2> </div>
+    <div class="col-md-4 col-xs-12" style="text-align:center"><h2> Ruolo </h2> </div>
+    <div class="col-md-4 col-xs-12" style="text-align:center"><h2> Numero Maglia </h2> </div>
+</div>
+
+<div class="row" *ngFor="let squadra of resultTeam.squad" id="dettagli">
+
+    <div class="col-md-4 col-xs-12" style="text-align:center" *ngIf="resultTeam">
+       <h5>{{squadra.name}}</h5>
+      </div>
+
+      <div class="col-md-4 col-xs-12" style="text-align:center" *ngIf="resultTeam">
+          <span><h5>{{squadra.role=='COACH'? squadra.role:squadra.position}}</h5></span>
+        </div>
+  
+        <div class="col-md-4 col-xs-12" style="text-align:center" *ngIf="resultTeam">
+            <span><h5>{{squadra.shirtNumber? squadra.shirtNumber:"Non Assegnata"}}</h5></span>
+        </div>
+          
+   
+
+
+</div>
+
+
+</div>
+<br>
+<br>

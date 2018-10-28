@@ -1,0 +1,13 @@
+<div class="container">
+<div class="row border border-primary rounded" *ngFor="let calendario of resultQuery | groupby:'matchday'">
+
+        <div class="col-md-12 col-xs-12 text1" id="giornata" *ngIf="calendario" > <h4> <br>  {{calendario.key}}a Giornata  <br> <br></h4></div>
+        
+        <div  id="partita" class="col-md-6 col-xs-6 text1"  *ngFor="let match of calendario.value" ><h4 routerLinkActive = "active " [routerLink]="['/matchdetails',match.id]">{{match.homeTeam.name}} vs. {{match.awayTeam.name}}</h4></div>
+          
+    
+</div>
+</div>
+
+  
+
